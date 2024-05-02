@@ -7,7 +7,7 @@ SHA-256 is used for hashing.
 ![1stimage](https://github.com/bharathy1999/WebApplicationFrontend/blob/main/Screenshot%20from%202024-05-02%2011-24-42.png)
 Encrypted data is then decrypted whenever the credential needs.
 The password is hashed password stored in database.whenever the user SignIn ,the enter password is hashed with same algorithm and then compare the hashed password of user with database hashed password for authentication. 
-![1stimage](https://github.com/bharathy1999/WebApplicationFrontend/blob/main/Screenshot%20from%202024-05-02%2011-19-27.png)
+![1stimage](https://github.com/bharathy1999/WebApplicationFrontend/blob/main/Screenshot%20from%202024-05-02%2012-28-44.png)
 ![1stimage](https://github.com/bharathy1999/WebApplicationFrontend/blob/main/Screenshot%20from%202024-05-02%2011-19-27.png)
 ![1stimage](https://github.com/bharathy1999/WebApplicationFrontend/blob/main/Screenshot%20from%202024-05-02%2011-19-27.png)
 ![1stimage](https://github.com/bharathy1999/WebApplicationFrontend/blob/main/Screenshot%20from%202024-05-02%2011-19-27.png)
