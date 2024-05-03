@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import com.signProfile.controller.JdbcConnection;
 
 
-
+// this a POJO class for new user sign up 
 
 public class NewProfileUpdate {
 
