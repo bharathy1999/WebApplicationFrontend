@@ -8,11 +8,12 @@ public class JdbcConnection {
 	static Connection connection=null;
 	
     public static Connection getJdbcConnection() {
-    	
+    	// if connection is null initially there is no connection .
+	//connection.isClosed() is used if there is a connection is closed at the point the object of connection is alive but the connection is closed.At the time we need to create a new connection
     	try {
 			if(connection==null||connection.isClosed()){
 				
-			
+			// this is for dynamicall load a driver class 
 			  Class.forName("com.mysql.cj.jdbc.Driver"); 
 			  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newmysql","abstract-programmer", "example-password");
 			
