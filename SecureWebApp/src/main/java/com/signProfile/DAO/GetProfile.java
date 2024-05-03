@@ -6,35 +6,30 @@ import java.sql.SQLException;
 
 import com.signProfile.controller.JdbcConnection;
 import com.signProfile.model.EncryptModel;
-
-
 //after authentication of user this class objects provide a user encrypted email address and the corresponding secret key
 public class GetProfile {
 
-  public EncryptModel retrieveProfile(String name,String password){
-	  // if there is no such data in database its return null
-	  EncryptModel encryptModel=null;
-	  try {
-		PreparedStatement preparedStatement=
-				JdbcConnection.getJdbcConnection().prepareStatement("Select * from secureweb where username=? AND password=?");
-		preparedStatement.setString(1,name);
-		preparedStatement.setString(2,password);
-		ResultSet resultSet = preparedStatement.executeQuery();
-		
-		while(resultSet.next()) {
-			encryptModel=new EncryptModel( resultSet.getString(3),resultSet.getString(4));
-		}
-		
-		} 
-	  catch (SQLException e) {
+	public EncryptModel retrieveProfile(String name, String password) {
+		EncryptModel encryptModel = null;
+		// if there is no such data in database its return null,The null is handled where is the method is called
+		try {
+			PreparedStatement preparedStatement = JdbcConnection.getJdbcConnection()
+					.prepareStatement("Select * from secureweb where username=? AND password=?");
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, password);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				encryptModel = new EncryptModel(resultSet.getString(3), resultSet.getString(4));
+			}
+
+		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			JdbcConnection.closeTheConnection();
 		}
-	  finally {
-		JdbcConnection.closeTheConnection();
-	  }
-		
+
 		return encryptModel;
 	}
-	
-	
+
 }
