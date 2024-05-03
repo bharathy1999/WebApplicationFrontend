@@ -24,7 +24,7 @@ import com.signProfile.model.EncryptModel;
 
 
 public class SignIn extends HttpServlet{
-	private static final long serialVersionUID = 1L;
+	
 	private String mfaOtp;
 	 public static String decrypt(String encryptedText, SecretKey secretKey)  {
 	      String email=null;
