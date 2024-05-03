@@ -8,10 +8,11 @@ import com.signProfile.controller.JdbcConnection;
 import com.signProfile.model.EncryptModel;
 
 
-
+//after authentication of user this class objects provide a user encrypted email address and the corresponding secret key
 public class GetProfile {
 
   public EncryptModel retrieveProfile(String name,String password){
+	  // if there is no such data in database its return null
 	  EncryptModel encryptModel=null;
 	  try {
 		PreparedStatement preparedStatement=
