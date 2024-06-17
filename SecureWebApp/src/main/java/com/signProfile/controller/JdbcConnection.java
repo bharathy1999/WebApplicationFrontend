@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-// this is singleton class there can be only one object is created
+// class for a JDBC connection object
 public class JdbcConnection {
 	static Connection connection = null;
 
