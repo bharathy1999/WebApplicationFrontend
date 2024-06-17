@@ -8,11 +8,9 @@ import java.util.Base64;
 
 import com.signProfile.DAO.NewProfileUpdate;
 
-import javax.crypto.BadPaddingException;
+
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -55,9 +53,12 @@ public class SignUp extends HttpServlet {
 			byte[] encryptedBytes = cipher.doFinal(inputBytes);
 			// it gives encrypted bytes so it is converted into STring using base64
 			key = Base64.getEncoder().encodeToString(encryptedBytes);
-		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException
-				| BadPaddingException e) {
+		} catch (NoSuchAlgorithmException  | InvalidKeyException e) {
 			e.printStackTrace();
+		}
+		
+		catch(Exception e){
+		e.printStackTrace();
 		}
 		return key;
 	}
