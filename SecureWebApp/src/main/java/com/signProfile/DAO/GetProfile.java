@@ -7,10 +7,11 @@ import java.sql.SQLException;
 import com.signProfile.controller.JdbcConnection;
 import com.signProfile.model.EncryptModel;
 //after authentication of user this class objects provide a user encrypted email address and the corresponding secret key
-public class GetProfile {
 
+public class GetProfile {
+EncryptModel encryptModel = null;
+	
 	public EncryptModel retrieveProfile(String name, String password) {
-		EncryptModel encryptModel = null;
 		// if there is no such data in database its return null,The null is handled where is the method is called
 		try {
 			PreparedStatement preparedStatement = JdbcConnection.getJdbcConnection()
